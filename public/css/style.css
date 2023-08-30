@@ -1391,7 +1391,22 @@ img{
 	display:inline-block;
 }
 
+.ethics-section{
+	position:relative;
+	padding:150px 0px 0px;
+}
+.mission-section{
+	position:relative;
+}
+.text span{
+	font-weight: bold;
+	font-style: italic;
+}
+.lightbox-image{
+	/* max-height: 500px !important; */
+}
 /*** 
+
 
 ====================================================================
 	Fun Facts Section

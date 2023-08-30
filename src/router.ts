@@ -1,4 +1,5 @@
 import { Application } from "express";
+import { all } from "./utils/data";
 
 export const router = (app: Application) => {
   //   router(app);
@@ -8,7 +9,8 @@ export const router = (app: Application) => {
   //   });
 
   app.get("/", (req, res) => {
-    res.render("index", {});
+    const galley_preview = all.slice(0,6)
+    res.render("index", {galley_preview});
   });
 
   app.get("/about", (req, res) => {
@@ -28,7 +30,7 @@ export const router = (app: Application) => {
   });
 
   app.get("/gallery", (req, res) => {
-    res.render("pages/gallery", {});
+    res.render("pages/gallery", {all});
   });
 
   //   app.get("*", (req, res) => {
