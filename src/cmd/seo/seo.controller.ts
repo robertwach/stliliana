@@ -26,7 +26,7 @@ export async function createPage (req: Request, res: Response) {
 export async function getSeo(str: string) {
     try {
       const seo = await Model.findOne({ name: str });
-      console.log("++++++++++++++++++", seo, str)
+    //   console.log("++++++++++++++++++", seo, str)
       return seo;
     } catch (err) {
       return {msg : "something went wrong", state: false};

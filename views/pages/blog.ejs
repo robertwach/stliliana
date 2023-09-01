@@ -33,15 +33,35 @@
         <div class="auto-container">
             <div class="row clearfix">
                 <% blogs.forEach(function(blog){ %>
-                    <a href="/blog-details/<%= blog.url %>"> <div class="gallery-item col-md-4 col-sm-6 col-xs-12">
-                        <div class="inner-box">
-                            <div class="image-box"><img src="<%= imageUrl %><%= blog.picture %> " alt="">
-                                
+                    <div class="blog-column col-md-12 col-sm-12 col-xs-12">
+                        <!--News Style Three-->
+                        <div class="news-style-three">
+                            <div class="row clearfix">
+                                <!--Image Column-->
+                                <div class="image-column col-md-6 col-sm-6 col-xs-12">
+                                    <div class="image">
+                                        <div class="date-box">4<span>Apr</span></div>
+                                        <a href="/blog-details/<%= blog.url %>">
+                                            <img src="<%= imageUrl %><%= blog.picture %>"
+                                        </a>
+                                    </div>
+                                </div>
+                                <!--Content Column-->
+                                <div class="content-column col-md-6 col-sm-6 col-xs-12">
+                                    <div class="content-inner">
+                                        <h3><a href="/blog-details/<%= blog.url %>"><%=blog.title %></a></h3>
+                                        <ul class="post-meta">
+                                            <li><a href="#"><span class="icon fa fa-user"></span><%=blog.author %></a></li>
+                                            <li><a href="#"><span class="icon fa fa-commenting-o"></span> 7 Comments</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="text"><%=blog.caption %></div>
+                                </div>
                             </div>
-                            <p class="blog-title"><%= blog.title %></p>
-                            <p><%= blog.caption %></p>
                         </div>
-                    </div></a>
+                    
+                    
+                    </div> 
                     <% }) %>
                 
             </div>

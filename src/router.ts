@@ -18,7 +18,7 @@ export const router = (app: Application) => {
 
     const seoholder = {_id: "", page:"", title:"st lilyann school", meta:"st lilyann school",  header_1:"st lilyann school", code:"code", content:"description"}
     const seo = await getSeo("home") || seoholder
-    console.log("==============seo", seo)
+    // console.log("==============seo", seo)
     res.render("index", {galley_preview, blogs, seo});
   });
 
@@ -30,7 +30,7 @@ export const router = (app: Application) => {
 
   app.get("/blog", async (req, res) => {
     const seoholder = {_id: "", page:"", title:"st lilyann school", meta:"st lilyann school",  header_1:"st lilyann school", code:"code", content:"description"}
-    const seo = await getSeo("abblogsout") || seoholder
+    const seo = await getSeo("blog") || seoholder
     const blogs = await getBlogs(req, res)
     res.render("pages/blog", {seo, blogs});
   });
