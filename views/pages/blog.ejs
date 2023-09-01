@@ -16,10 +16,10 @@
     <section class="page-title" style="background-image:url(/images/background/5.jpg);">
     	<div class="auto-container">
         	<div class="inner-box">
-                <h1>about us</h1>
+                <h1>blog & Activities</h1>
                 <ul class="bread-crumb">
                 	<li><a href="/">Home</a></li>
-                    <li>Blog</li>
+                    <li>blog & Activities</li>
                 </ul>
             </div>
         </div>
@@ -29,97 +29,20 @@
     
     
 	<!--Sidebar Page-->
-    <div class="sidebar-page-container">
+    <div class="sidebar-page-container cardi">
         <div class="auto-container">
             <div class="row clearfix">
-				
-                <!--Content Side-->
-                <div class="content-side col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                	<!--Blog-->
-                    <section class="blog-classic">
-						
-                        <!--News Style Four-->
-                        <div class="news-style-four">
-                            <div class="inner-box">
-                            	<!--Image Column-->
-                                <div class="image">
-                                    <a href="/post"><img src="images/resource/news-11.jpg" alt="" /></a>
-                                </div>
-                                <!--Content Column-->
-                                <div class="content-column">
-                                    <div class="inner">
-                                        <div class="post-date">April 08,2017</div>
-                                        <h3><a href="/post/1">Activities Using the  Five Senses With clear example</a></h3>
-                                        <ul class="post-meta">
-                                        	<li>by <span>Admin</span></li>
-                                            <li><a href="/post/1"><span class="icon fa fa-commenting-o"></span> 7 Comments</a></li>	
-                                        </ul>
-                                        <div class="text">Class aptent taciti sociosqu adtora torq uent per conubia mauris eros nostra. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consect etur, adipisci velit.</div>
-                                        <a class="read-more" href="/post/1">Read More <span class="icon fa fa-angle-right"></span></a>
-                                    </div>
-                                </div>
+                <% blogs.forEach(function(blog){ %>
+                    <a href="/blog-details/<%= blog.url %>"> <div class="gallery-item col-md-4 col-sm-6 col-xs-12">
+                        <div class="inner-box">
+                            <div class="image-box"><img src="<%= imageUrl %><%= blog.picture %> " alt="">
+                                
                             </div>
+                            <p class="blog-title"><%= blog.title %></p>
+                            <p><%= blog.caption %></p>
                         </div>
-                        
-                    </section>
-                    
-                    <!-- Styled Pagination -->
-                    <div class="styled-pagination">
-                        <ul class="clearfix">
-                            <li><a class="prev" href="#"><span class="fa fa-angle-left"></span></a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#" class="active">2</a></li>
-                            <li><a class="next" href="#"><span class="fa fa-angle-right"></span></a></li>
-                        </ul>
-                    </div>
-                    
-                </div>
-                
-                <!--Sidebar-->
-                <div class="sidebar-side col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <aside class="sidebar">
-						
-                        <!--Services Category Widget-->
-                        <div class="sidebar-widget category-widget">
-                        	<div class="sidebar-title">
-                            	<h3>Categories</h3>
-                            </div>
-                            <ul>
-                                <li><a href="#">Blog post <span>(15)</span></a></li>
-                                <li><a href="#"> News post<span>(20)</span></a></li>
-                               
-                            </ul>
-                        </div>
-                        
-                        <!--Services Post Widget-->
-                        <div class="sidebar-widget popular-posts">
-                        	<div class="sidebar-title">
-                            	<h3>Latest Post</h3>
-                            </div>
-                            <!--Post-->
-                            <article class="post">
-                            	<figure class="post-thumb img-circle"><a href="#"><img src="images/resource/post-thumb-1.jpg" alt=""></a></figure>
-                                <div class="text"><a href="#">Activities Improves Mind</a></div>
-                                <div class="post-info">Posted by Adam Rose</div>
-                            </article>
-                            <!--Post-->
-                            <article class="post">
-                            	<figure class="post-thumb img-circle"><a href="#"><img src="images/resource/post-thumb-2.jpg" alt=""></a></figure>
-                                <div class="text"><a href="#">Make Learning Fun for Your Kids</a></div>
-                                <div class="post-info">Posted by Adam Rose</div>
-                            </article>
-                            <!--Post-->
-                            <article class="post">
-                            	<figure class="post-thumb img-circle"><a href="#"><img src="images/resource/post-thumb-3.jpg" alt=""></a></figure>
-                                <div class="text"><a href="#">What Do Kids Learn in Preschool?</a></div>
-                                <div class="post-info">Posted by Adam Rose</div>
-                            </article>
-                        </div>
-                        
-                       
-                        
-                    </aside>
-                </div>
+                    </div></a>
+                    <% }) %>
                 
             </div>
         </div>

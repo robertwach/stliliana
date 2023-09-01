@@ -11,6 +11,8 @@ export const business = {
     instagram: "https://www.instagram.com/stliliana",
     linkedin: "https://www.linkedin.com/stliliana",
   },
+  imageUrl: "http://localhost:5400",
+  seo: {_id: "", page:"", title:"st lilyann school", meta:"st lilyann school",  header_1:"st lilyann school", code:"code", content:"description"}
 };
 
 export const all = [

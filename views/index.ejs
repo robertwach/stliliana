@@ -368,6 +368,8 @@
             </div>
             <div class="row clearfix">
             	<!--Blog Column-->
+
+                <% blogs.forEach(function(blog){ %>
             	<div class="blog-column col-md-6 col-sm-12 col-xs-12">
                 	<!--News Style Three-->
                     <div class="news-style-three">
@@ -376,72 +378,28 @@
                         	<div class="image-column col-md-4 col-sm-4 col-xs-12">
                             	<div class="image">
                                 	<div class="date-box">4<span>Apr</span></div>
-                                	<a href="blog-single.html"><img src="images/resource/news-7.jpg" alt="" /></a>
+                                	<a href="/blog-details/<%= blog.url %>">
+                                        <img src="<%= imageUrl %><%= blog.picture %>"
+                                    </a>
                                 </div>
                             </div>
                             <!--Content Column-->
                             <div class="content-column col-md-8 col-sm-8 col-xs-12">
                             	<div class="content-inner">
-                                    <h3><a href="blog-single.html">MUSIC ACTIVITIES</a></h3>
+                                    <h3><a href="/blog-details/<%= blog.url %>"><%=blog.title %></a></h3>
                                     <ul class="post-meta">
-                                        <li><a href="blog-single.html"><span class="icon fa fa-user"></span>Adam Rose</a></li>
-                                        <li><a href="blog-single.html"><span class="icon fa fa-commenting-o"></span> 7 Comments</a></li>
+                                        <li><a href="#"><span class="icon fa fa-user"></span><%=blog.author %></a></li>
+                                        <li><a href="#"><span class="icon fa fa-commenting-o"></span> 7 Comments</a></li>
                                     </ul>
                                 </div>
-                                <div class="text">Nulla ac condimentum mauris, ac laoreet enim. Pellentesque nunc nibh, lobortis ut vestiNulla ac condimentum mauris, ac  enirtis ut vesti...</div>
+                                <div class="text"><%=blog.caption %></div>
                             </div>
                         </div>
                     </div>
                 
-                	<!--News Style Three-->
-                    <div class="news-style-three">
-                    	<div class="row clearfix">
-                        	<!--Image Column-->
-                        	<div class="image-column col-md-4 col-sm-4 col-xs-12">
-                            	<div class="image">
-                                	<div class="date-box">3<span>Apr</span></div>
-                                	<a href="blog-single.html"><img src="/images/resource/news-8.jpg" alt="" /></a>
-                                </div>
-                            </div>
-                            <!--Content Column-->
-                            <div class="content-column col-md-8 col-sm-8 col-xs-12">
-                            	<div class="content-inner">
-                                    <h3><a href="blog-single.html">SCHOOL ANNIVERSARY</a></h3>
-                                    <ul class="post-meta">
-                                        <li><a href="blog-single.html"><span class="icon fa fa-user"></span>Adam Rose</a></li>
-                                        <li><a href="blog-single.html"><span class="icon fa fa-commenting-o"></span> 5 Comments</a></li>
-                                    </ul>
-                                </div>
-                                <div class="text">Nulla ac condimentum mauris, ac laoreet enim. Pellentesque nunc nibh, lobortis ut vestiNulla ac condimentum mauris, ac  enirtis ut vesti...</div>
-                            </div>
-                        </div>
-                    </div>
                 
-                	<!--News Style Three-->
-                    <div class="news-style-three">
-                    	<div class="row clearfix">
-                        	<!--Image Column-->
-                        	<div class="image-column col-md-4 col-sm-4 col-xs-12">
-                            	<div class="image">
-                                	<div class="date-box">1<span>Apr</span></div>
-                                	<a href="blog-single.html"><img src="/images/resource/news-9.jpg" alt="" /></a>
-                                </div>
-                            </div>
-                            <!--Content Column-->
-                            <div class="content-column col-md-8 col-sm-8 col-xs-12">
-                            	<div class="content-inner">
-                                    <h3><a href="blog-single.html">BIO SPECIAL</a></h3>
-                                    <ul class="post-meta">
-                                        <li><a href="blog-single.html"><span class="icon fa fa-user"></span>Adam Rose</a></li>
-                                        <li><a href="blog-single.html"><span class="icon fa fa-commenting-o"></span> 4 Comments</a></li>
-                                    </ul>
-                                </div>
-                                <div class="text">Nulla ac condimentum mauris, ac laoreet enim. Pellentesque nunc nibh, lobortis ut vestiNulla ac condimentum mauris, ac  enirtis ut vesti...</div>
-                            </div>
-                        </div>
-                    </div>
-                
-                </div>
+                </div> 
+                <% }) %>
                 <!--Tab Column-->
                 <div class="tab-column col-md-6 col-sm-12 col-xs-12">
                     
@@ -458,104 +416,8 @@
                                 <li data-tab="#games" class="tab-btn">Games</li>
                             </ul>
                             
-                            <!--Tabs Container-->
-                            <div class="tabs-content">
                                 
-                                <!--Tab / Active Tab-->
-                                <div class="tab active-tab" id="education">
-                                    <div class="content">
-                                    	<!--Tab Boxed-->
-                                        <div class="tab-boxed">
-                                        	<div class="inner-box">
-                                            	<div class="image">
-                                                	<img src="/images/resource/tab-1.jpg" alt="" />
-                                                </div>
-                                                <h3>Let the Learning Begin</h3>
-                                                <div class="text">We are group of teachers who really love childrens and enjoy every moment of teaching and playing  with as different Education Major. </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <!--Tab Boxed-->
-                                        <div class="tab-boxed">
-                                        	<div class="inner-box">
-                                            	<div class="image">
-                                                	<img src="/images/resource/tab-2.jpg" alt="" />
-                                                </div>
-                                                <h3>Special Cources programes</h3>
-                                                <div class="text">We are group of teachers who really love childrens and enjoy every moment of teaching and playing  with as different Education Major. </div>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                
-                                <!--Tab-->
-                                <div class="tab" id="activity">
-                                    <div class="content">
-                                        
-                                        <!--Tab Boxed-->
-                                        <div class="tab-boxed">
-                                        	<div class="inner-box">
-                                            	<div class="image">
-                                                	<img src="/images/resource/tab-2.jpg" alt="" />
-                                                </div>
-                                                <h3>Special Cources programes</h3>
-                                                <div class="text">We are group of teachers who really love childrens and enjoy every moment of teaching and playing  with as different Education Major. </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <!--Tab Boxed-->
-                                        <div class="tab-boxed">
-                                        	<div class="inner-box">
-                                            	<div class="image">
-                                                	<img src="/images/resource/tab-1.jpg" alt="" />
-                                                </div>
-                                                <h3>Let the Learning Begin</h3>
-                                                <div class="text">We are group of teachers who really love childrens and enjoy every moment of teaching and playing  with as different Education Major. </div>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                
-                                <!--Tab-->
-                                <div class="tab" id="painting">
-                                    <div class="content">
-                                        
-                                        <!--Tab Boxed-->
-                                        <div class="tab-boxed">
-                                        	<div class="inner-box">
-                                            	<div class="image">
-                                                	<img src="/images/resource/tab-1.jpg" alt="" />
-                                                </div>
-                                                <h3>Let the Learning Begin</h3>
-                                                <div class="text">We are group of teachers who really love childrens and enjoy every moment of teaching and playing  with as different Education Major. </div>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                
-                                <!--Tab-->
-                                <div class="tab" id="games">
-                                    <div class="content">
-                                        
-                                        <!--Tab Boxed-->
-                                        <div class="tab-boxed">
-                                        	<div class="inner-box">
-                                            	<div class="image">
-                                                	<img src="/images/resource/tab-2.jpg" alt="" />
-                                                </div>
-                                                <h3>Special Cources programes</h3>
-                                                <div class="text">We are group of teachers who really love childrens and enjoy every moment of teaching and playing  with as different Education Major. </div>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
+                        
                         
                     </div>
                     <!--End Product Info Tabs-->
