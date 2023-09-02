@@ -1,5 +1,10 @@
 import { Application } from "express";
-
+import { all } from "./utils/data";
+import { getBlog, getBlogs, getHomeBlogs } from "./cmd/blog/blog.controller";
+import { getSeo } from "./cmd/seo/seo.controller";
+import { Schema } from "mongoose";
+import { blog } from "./interfaces/article";
+const ObjectId = Schema.Types.ObjectId;
 export const router = (app: Application) => {
   //   router(app);
 
@@ -7,28 +12,110 @@ export const router = (app: Application) => {
   //     res.render("pages/about", {});
   //   });
 
-  app.get("/", (req, res) => {
-    res.render("index", {});
+  app.get("/", async (req, res) => {
+    const galley_preview = all.slice(0, 6);
+    const blogs = await getHomeBlogs(req, res);
+
+    const seoholder = {
+      _id: "",
+      page: "",
+      title: "st lilyann school",
+      meta: "st lilyann school",
+      header_1: "st lilyann school",
+      code: "code",
+      content: "description",
+    };
+    const seo = (await getSeo("home")) || seoholder;
+    // console.log("==============seo", seo)
+    res.render("index", { galley_preview, blogs, seo });
   });
 
-  app.get("/about", (req, res) => {
-    res.render("pages/about", {});
+  app.get("/about", async (req, res) => {
+    const seoholder = {
+      _id: "",
+      page: "",
+      title: "st lilyann school",
+      meta: "st lilyann school",
+      header_1: "st lilyann school",
+      code: "code",
+      content: "description",
+    };
+    const seo = (await getSeo("about")) || seoholder;
+    res.render("pages/about", { seo });
   });
 
-  app.get("/blog", (req, res) => {
-    res.render("pages/blog", {});
+  app.get("/location", async (req, res) => {
+    res.render("pages/ourLocation", {});
+  });
+
+  app.get("/blog", async (req, res) => {
+    const seoholder = {
+      _id: "",
+      page: "",
+      title: "st lilyann school",
+      meta: "st lilyann school",
+      header_1: "st lilyann school",
+      code: "code",
+      content: "description",
+    };
+    const seo = (await getSeo("blog")) || seoholder;
+    const blogs = await getBlogs(req, res);
+    res.render("pages/blog", { seo, blogs });
+  });
+  app.get("/blog-details/:url", async (req, res) => {
+    const blog = (await getBlog(req, res)) || null;
+    // console.log("=============blog", blog)
+    let title = "st lilyann school";
+    let meta = "st lilyann school";
+    if (blog !== null) {
+      title = blog.title;
+      meta = blog.meta;
+    }
+
+    const seoholder = {
+      _id: "",
+      page: "",
+      title: title,
+      meta: meta,
+      header_1: "st lilyann school",
+      code: "code",
+      content: "description",
+    };
+    const seo = seoholder;
+    const blogs = await getBlogs(req, res);
+    res.render("pages/blog-details", { blog, blogs, seo });
   });
 
   app.get("/post/1", (req, res) => {
     res.render("pages/post", {});
   });
 
-  app.get("/contact-us", (req, res) => {
-    res.render("pages/contactUs", {});
+  app.get("/contact-us", async (req, res) => {
+    const seoholder = {
+      _id: "",
+      page: "",
+      title: "st lilyann school",
+      meta: "st lilyann school",
+      header_1: "st lilyann school",
+      code: "code",
+      content: "description",
+    };
+    const seo = (await getSeo("conctactUs")) || seoholder;
+    res.render("pages/contactUs", { seo });
   });
 
-  app.get("/gallery", (req, res) => {
-    res.render("pages/gallery", {});
+  app.get("/gallery", async (req, res) => {
+    const seoholder = {
+      _id: "",
+      page: "",
+      title: "st lilyann school",
+      meta: "st lilyann school",
+      header_1: "st lilyann school",
+      code: "code",
+      content: "description",
+    };
+    const seo = (await getSeo("gallery")) || seoholder;
+    res.render("pages/gallery", { all, seo });
   });
 
   //   app.get("*", (req, res) => {

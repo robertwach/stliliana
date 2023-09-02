@@ -30,6 +30,14 @@
 27. Contact Form
 
 **********************************************/
+@import url('/css/font-awesome.css');
+@import url('/css/flaticon.css');
+@import url('/css/animate.css');
+@import url('/css/owl.css');
+@import url('/css/jquery.fancybox.css');
+@import url('/css/hover.css');
+
+@import url('https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Grand+Hotel|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
 
 
 :root {
@@ -38,18 +46,11 @@
 	--primary-lighter: #a855f7;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Grand+Hotel|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
 
 /*font-family: 'Roboto', sans-serif;
 font-family: 'Dosis', sans-serif;
 font-family: 'Grand Hotel', cursive;*/
 
-@import url('font-awesome.css');
-@import url('flaticon.css');
-@import url('animate.css');
-@import url('owl.css');
-@import url('jquery.fancybox.css');
-@import url('hover.css');
 
 /*** 
 
@@ -1217,13 +1218,18 @@ img{
 }
 
 .main-slider .tparrows.tp-leftarrow.preview3::after{
-	content: "\f104";
+	content: url("data:image/svg+xml; utf8, <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-left' viewBox='0 0 16 16'> <path fill-rule='evenodd' d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>");
 	font-family: 'FontAwesome';
+	padding-top: 4px;
 }
 
 .main-slider .tparrows.tp-rightarrow.preview3::after{
-	content: "\f105";
+	content: url("data:image/svg+xml; utf8, <svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='currentColor' class='bi bi-chevron-right' viewBox='0 0 16 16'> <path fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/> </svg>");
 	font-family: 'FontAwesome';
+	display: block;
+	/* margin top-bottom auto */
+	padding-top: 4px;
+
 }
 
 .main-slider .tparrows.preview3.tp-leftarrow{
@@ -1391,7 +1397,35 @@ img{
 	display:inline-block;
 }
 
-/*** 
+.ethics-section{
+	position:relative;
+	padding:150px 0px 0px;
+}
+.mission-section{
+	position:relative;
+}
+.text span{
+	font-weight: bold;
+	font-style: italic;
+}
+.lightbox-image{
+	/* max-height: 500px !important; */
+}
+.blog-title{
+	padding: 10px;
+	text-align: center;
+    text-transform: capitalize;
+
+}
+/* .cardi{
+    max-width: 500px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+** 
+
 
 ====================================================================
 	Fun Facts Section
@@ -2581,6 +2615,25 @@ img{
 	line-height:1.8em;
 	margin-top:20px;
 	margin-bottom:20px;
+}
+
+.footer_logo {
+	background: white;
+	padding: 4px;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: row;
+	justify-items: center;
+	align-items: center;
+	gap: 12px;
+
+}
+
+.footer_logo  p {
+	font-size: 22px;
+	font: 500 22px 'Roboto', sans-serif;
+	color: #212121;
+	margin: 0 auto;
 }
 
 /*List Widget*/
