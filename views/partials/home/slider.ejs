@@ -1,27 +1,34 @@
 <!--Main Slider-->
+
 <section class="main-slider" data-start-height="800" data-slide-overlay="yes">
     	
     <div class="tp-banner-container">
         <div class="tp-banner">
             <ul>
+
+                <% bannerImages.forEach(function(bannerImage) { %>
                 
                 <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="/images/slider/IMG-20230829-WA0068.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">
-                <img src="/images/slider/IMG-20230829-WA0068.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"> 
+                <img src="<%- bannerImage.image %>"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"> 
                 
                 <div class="overlay-slide"></div>
                 
-                <div class="tp-caption sft sfb tp-resizeme"
-                data-x="center" data-hoffset="0"
-                data-y="center" data-voffset="-180"
-                data-speed="1500"
-                data-start="0"
-                data-easing="easeOutExpo"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.01"
-                data-endelementdelay="0.3"
-                data-endspeed="1200"
-                data-endeasing="Power4.easeIn"><figure class="content-image"><img src="/images/main-slider/content-image-1.png" alt=""></figure> </div>
+                <!-- <div class="tp-caption sft sfb tp-resizeme"
+                    data-x="center" data-hoffset="0"
+                    data-y="center" data-voffset="-180"
+                    data-speed="1500"
+                    data-start="0"
+                    data-easing="easeOutExpo"
+                    data-splitin="none"
+                    data-splitout="none"
+                    data-elementdelay="0.01"
+                    data-endelementdelay="0.3"
+                    data-endspeed="1200"
+                    data-endeasing="Power4.easeIn">
+                    <figure class="content-image">
+                        <img src="/images/main-slider/content-image-1.png" alt="">
+                    </figure>
+                </div> -->
                 
                 <div class="tp-caption sft sfb tp-resizeme"
                 data-x="center" data-hoffset="0"
@@ -34,7 +41,9 @@
                 data-elementdelay="0.01"
                 data-endelementdelay="0.3"
                 data-endspeed="1200"
-                data-endeasing="Power4.easeIn"><div class="styled-text">welcome to St Lilyanna</div></div>
+                data-endeasing="Power4.easeIn"><div class="styled-text">
+                    <%- bannerImage.subtitle %>
+                </div></div>
                 
                 <div class="tp-caption sfb sfb tp-resizeme"
                 data-x="center" data-hoffset="0"
@@ -47,7 +56,9 @@
                 data-elementdelay="0.01"
                 data-endelementdelay="0.3"
                 data-endspeed="1200"
-                data-endeasing="Power4.easeIn"><div class="border-heading">Your Childrens Are Safe With us</div></div>
+                data-endeasing="Power4.easeIn"><div class="border-heading">
+                    <%- bannerImage.title %>
+                </div></div>
                 
                 <div class="tp-caption sfb sfb tp-resizeme"
                 data-x="center" data-hoffset="0"
@@ -60,7 +71,12 @@
                 data-elementdelay="0.01"
                 data-endelementdelay="0.3"
                 data-endspeed="1200"
-                data-endeasing="Power4.easeIn"><div class="text">See Our Kindergarten Special Features!</div></div>
+                data-endeasing="Power4.easeIn">
+                
+                <div class="text">
+                    <%- bannerImage.description %>
+                </div>
+            </div>
                 
                 <div class="tp-caption sfb sfb tp-resizeme"
                 data-x="center" data-hoffset="0"
@@ -76,219 +92,9 @@
                 data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one">Let’s Go</a></div>
                 
                 </li>
-                <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="/images/slider/IMG-20230829-WA0044.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">
-                <img src="/images/slider/IMG-20230829-WA0044.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"> 
-                
-                <div class="overlay-slide"></div>
-                
-                <div class="tp-caption sft sfb tp-resizeme"
-                data-x="center" data-hoffset="0"
-                data-y="center" data-voffset="-180"
-                data-speed="1500"
-                data-start="0"
-                data-easing="easeOutExpo"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.01"
-                data-endelementdelay="0.3"
-                data-endspeed="1200"
-                data-endeasing="Power4.easeIn"><figure class="content-image"><img src="/images/main-slider/content-image-1.png" alt=""></figure> </div>
-                
-                <div class="tp-caption sft sfb tp-resizeme"
-                data-x="center" data-hoffset="0"
-                data-y="center" data-voffset="-70"
-                data-speed="1500"
-                data-start="500"
-                data-easing="easeOutExpo"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.01"
-                data-endelementdelay="0.3"
-                data-endspeed="1200"
-                data-endeasing="Power4.easeIn"><div class="styled-text">We Are Christian lead</div></div>
-                
-                <div class="tp-caption sfb sfb tp-resizeme"
-                data-x="center" data-hoffset="0"
-                data-y="center" data-voffset="25"
-                data-speed="1500"
-                data-start="1000"
-                data-easing="easeOutExpo"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.01"
-                data-endelementdelay="0.3"
-                data-endspeed="1200"
-                data-endeasing="Power4.easeIn"><div class="border-heading">We observe High Moral Values </div></div>
-                
-                <div class="tp-caption sfb sfb tp-resizeme"
-                data-x="center" data-hoffset="0"
-                data-y="center" data-voffset="115"
-                data-speed="1500"
-                data-start="1500"
-                data-easing="easeOutExpo"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.01"
-                data-endelementdelay="0.3"
-                data-endspeed="1200"
-                data-endeasing="Power4.easeIn"><div class="text">our code of ethics defines us</div></div>
-                
-                <div class="tp-caption sfb sfb tp-resizeme"
-                data-x="center" data-hoffset="0"
-                data-y="center" data-voffset="175"
-                data-speed="1500"
-                data-start="2000"
-                data-easing="easeOutExpo"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.01"
-                data-endelementdelay="0.3"
-                data-endspeed="1200"
-                data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one">Learn More</a></div>
-                
-                </li>
-                <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="/images/slider/IMG-20230829-WA0112.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">
-                <img src="/images/slider/IMG-20230829-WA0112.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"> 
-                
-                <div class="overlay-slide"></div>
-                
-                <div class="tp-caption sft sfb tp-resizeme"
-                data-x="center" data-hoffset="0"
-                data-y="center" data-voffset="-180"
-                data-speed="1500"
-                data-start="0"
-                data-easing="easeOutExpo"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.01"
-                data-endelementdelay="0.3"
-                data-endspeed="1200"
-                data-endeasing="Power4.easeIn"><figure class="content-image"><img src="/images/main-slider/content-image-1.png" alt=""></figure> </div>
-                
-                <div class="tp-caption sft sfb tp-resizeme"
-                data-x="center" data-hoffset="0"
-                data-y="center" data-voffset="-70"
-                data-speed="1500"
-                data-start="500"
-                data-easing="easeOutExpo"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.01"
-                data-endelementdelay="0.3"
-                data-endspeed="1200"
-                data-endeasing="Power4.easeIn"><div class="styled-text">Playing is important to a childs growth</div></div>
-                
-                <div class="tp-caption sfb sfb tp-resizeme"
-                data-x="center" data-hoffset="0"
-                data-y="center" data-voffset="25"
-                data-speed="1500"
-                data-start="1000"
-                data-easing="easeOutExpo"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.01"
-                data-endelementdelay="0.3"
-                data-endspeed="1200"
-                data-endeasing="Power4.easeIn"><div class="border-heading">We create fun for our kids</div></div>
-                
-                <div class="tp-caption sfb sfb tp-resizeme"
-                data-x="center" data-hoffset="0"
-                data-y="center" data-voffset="115"
-                data-speed="1500"
-                data-start="1500"
-                data-easing="easeOutExpo"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.01"
-                data-endelementdelay="0.3"
-                data-endspeed="1200"
-                data-endeasing="Power4.easeIn"><div class="text">Play builds creative side of the kid</div></div>
-                
-                <div class="tp-caption sfb sfb tp-resizeme"
-                data-x="center" data-hoffset="0"
-                data-y="center" data-voffset="175"
-                data-speed="1500"
-                data-start="2000"
-                data-easing="easeOutExpo"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.01"
-                data-endelementdelay="0.3"
-                data-endspeed="1200"
-                data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one">Let’s Go</a></div>
-                
-                </li>
-                <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="/images/slider/IMG-20230829-WA0078.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">
-                <img src="/images/slider/IMG-20230829-WA0078.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"> 
-                
-                <div class="overlay-slide"></div>
-                
-                <div class="tp-caption sft sfb tp-resizeme"
-                data-x="center" data-hoffset="0"
-                data-y="center" data-voffset="-180"
-                data-speed="1500"
-                data-start="0"
-                data-easing="easeOutExpo"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.01"
-                data-endelementdelay="0.3"
-                data-endspeed="1200"
-                data-endeasing="Power4.easeIn"><figure class="content-image"><img src="/images/main-slider/content-image-1.png" alt=""></figure> </div>
-                
-                <div class="tp-caption sft sfb tp-resizeme"
-                data-x="center" data-hoffset="0"
-                data-y="center" data-voffset="-70"
-                data-speed="1500"
-                data-start="500"
-                data-easing="easeOutExpo"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.01"
-                data-endelementdelay="0.3"
-                data-endspeed="1200"
-                data-endeasing="Power4.easeIn"><div class="styled-text">loyalty building and patriotism</div></div>
-                
-                <div class="tp-caption sfb sfb tp-resizeme"
-                data-x="center" data-hoffset="0"
-                data-y="center" data-voffset="25"
-                data-speed="1500"
-                data-start="1000"
-                data-easing="easeOutExpo"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.01"
-                data-endelementdelay="0.3"
-                data-endspeed="1200"
-                data-endeasing="Power4.easeIn"><div class="border-heading">Humility is cultivivated</div></div>
-                
-                <div class="tp-caption sfb sfb tp-resizeme"
-                data-x="center" data-hoffset="0"
-                data-y="center" data-voffset="115"
-                data-speed="1500"
-                data-start="1500"
-                data-easing="easeOutExpo"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.01"
-                data-endelementdelay="0.3"
-                data-endspeed="1200"
-                data-endeasing="Power4.easeIn"><div class="text">We have various activies meant to teach humility</div></div>
-                
-                <div class="tp-caption sfb sfb tp-resizeme"
-                data-x="center" data-hoffset="0"
-                data-y="center" data-voffset="175"
-                data-speed="1500"
-                data-start="2000"
-                data-easing="easeOutExpo"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.01"
-                data-endelementdelay="0.3"
-                data-endspeed="1200"
-                data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one">Let’s Go</a></div>
-                
-                </li>
+
+                <% }) %>
+
                 
                
                 

@@ -1,3 +1,29 @@
+const bannerImages = [
+  {
+    image: "/banner/graduation-close-shot.jpg",
+    title: "Your Childrens Are Safe With us",
+    subtitle: "welcome to St Lilyanna",
+    description: " Centre of Excellence in Teaching, Learning and Research",
+  },
+  {
+    image: "/banner/extracurricular.jpg",
+    title: "We create fun for our kids",
+    subtitle: "Playing is important to a childs growth",
+    description: "Play builds creative side of the child",
+  },
+  {
+    image: "/banner/learning.jpg",
+    title: "Nurturing academic excellence",
+    subtitle: "Giving your child a solid start",
+    description: "We help lay a firm foundation for your child",
+  },
+  {
+    image: "/banner/scout.jpg",
+    title: "Humility is cultivated",
+    subtitle: "loyalty building and patriotism",
+    description: "We have various activities meant to foster growth",
+  },
+];
 export const business = {
   name: "St Lilyanna",
   shortName: "St Lilyanna",
@@ -23,6 +49,8 @@ export const business = {
     code: "code",
     content: "description",
   },
+  bannerImages,
+  page: "",
 };
 
 export const all = [

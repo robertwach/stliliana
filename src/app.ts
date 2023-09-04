@@ -1,5 +1,8 @@
 import express, { Application, Request, Response } from "express";
 import { business } from "./utils/data";
+// var favicon = require("serve-favicon");
+// var path = require("path");
+
 const mongoose = require("mongoose");
 
 require("dotenv").config();
@@ -26,6 +29,9 @@ app.use(async function (req, res, next) {
   // res.locals.imageUrl = "https://example.co.ke";
   next();
 });
+
+// app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
+app.use("/favicon.ico", express.static("/favicon.ico"));
 
 app.locals = {
   ...business,

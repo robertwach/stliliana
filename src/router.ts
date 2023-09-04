@@ -27,7 +27,7 @@ export const router = (app: Application) => {
     };
     const seo = (await getSeo("home")) || seoholder;
     // console.log("==============seo", seo)
-    res.render("index", { galley_preview, blogs, seo });
+    res.render("index", { galley_preview, blogs, seo, page: "/" });
   });
 
   app.get("/about", async (req, res) => {
@@ -41,11 +41,19 @@ export const router = (app: Application) => {
       content: "description",
     };
     const seo = (await getSeo("about")) || seoholder;
-    res.render("pages/about", { seo });
+    res.render("pages/about", { seo, page: "/about" });
   });
 
   app.get("/location", async (req, res) => {
     res.render("pages/ourLocation", {});
+  });
+
+  app.get("/admissions", async (req, res) => {
+    res.render("pages/admissions", {});
+  });
+
+  app.get("/thank-you", async (req, res) => {
+    res.render("pages/thankYou", {});
   });
 
   app.get("/blog", async (req, res) => {
@@ -60,7 +68,7 @@ export const router = (app: Application) => {
     };
     const seo = (await getSeo("blog")) || seoholder;
     const blogs = await getBlogs(req, res);
-    res.render("pages/blog", { seo, blogs });
+    res.render("pages/blog", { seo, blogs, page: "/blog" });
   });
   app.get("/blog-details/:url", async (req, res) => {
     const blog = (await getBlog(req, res)) || null;
@@ -101,7 +109,7 @@ export const router = (app: Application) => {
       content: "description",
     };
     const seo = (await getSeo("conctactUs")) || seoholder;
-    res.render("pages/contactUs", { seo });
+    res.render("pages/contactUs", { seo, page: "/contact-us" });
   });
 
   app.get("/gallery", async (req, res) => {
@@ -115,7 +123,7 @@ export const router = (app: Application) => {
       content: "description",
     };
     const seo = (await getSeo("gallery")) || seoholder;
-    res.render("pages/gallery", { all, seo });
+    res.render("pages/gallery", { all, seo, page: "/gallery" });
   });
 
   //   app.get("*", (req, res) => {

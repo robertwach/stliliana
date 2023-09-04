@@ -55,16 +55,20 @@
                     <div class="navbar-collapse collapse clearfix">
                         <!--Left Nav-->
                         <ul class="navigation left-nav clearfix">
-                            <li class="current"><a href="#">Home</a>
+                            <li class="<% if (page === '/') { %> current <% } %>">
+                            <a href="#">Home</a>
                                
                             </li>
-                            <li><a href="/about">About Us</a></li>
+                            <li  class="<% if (page === '/about-us') { %> current <% } %>"><a href="/about">About Us</a></li>
                         </ul>
                         <!--Right Nav-->
                         <ul class="navigation right-nav clearfix">
-                            <li><a href="/gallery">Gallery</a></li>
-                            <li class=""><a href="/blog">Blog</a> </li>
-                            <li><a href="/contact-us">Contact Us</a></li>
+                            <li  class="<% if (page === '/gallery') { %> current <% } %>">
+                                <a href="/gallery">Gallery</a></li>
+                            <li  class="<% if (page === '/blog') { %> current <% } %>">
+                                <a href="/blog">Blog</a> </li>
+                            <li  class="<% if (page === '/contact-us') { %> current <% } %>">
+                                <a href="/contact-us">Contact Us</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -102,22 +106,20 @@
                     
                     <div class="navbar-collapse collapse clearfix">
                         <ul class="navigation clearfix">
-                            <li class="current"><a href="/">Home</a>
+                            <li  class="<% if (page === '/') { %> current <% } %>"><a href="/">Home</a>
                             </li>
-                            <li><a href="/about">About Us</a></li>
-                            <!-- <li class=""><a href="#">Classes</a>
-                                <ul>
-                                    <li><a href="classes">Classes</a></li>
-                                </ul>
+                            <li  class="<% if (page === '/about-us') { %> current <% } %>">
+                                <a href="/about">About Us</a></li>
+                           
+                            <li  class="<% if (page === '/gallery') { %> current <% } %>">
+                                <a href="/gallery">Gallery</a>
                             </li>
-                            <li class="dropdown"><a href="#">Pages</a>
-                                <ul>
-                                    <li><a href="teachers">Teachers</a></li>
-                                </ul>
-                            </li> -->
-                            <li><a href="/gallery">Gallery</a></li>
-                            <li class=""><a href="/blog">Blog</a> </li>
-                            <li><a href="/contact-us">Contact Us</a></li>
+                            <li  class="<% if (page === '/blog') { %> current <% } %>">
+                                <a href="/blog">Blog</a>
+                            </li>
+                            <li  class="<% if (page === '/contact-us') { %> current <% } %>">
+                                <a href="/contact-us">Contact Us</a>
+                            </li>
                         </ul>
                     </div>
                 </nav><!-- Main Menu End-->
