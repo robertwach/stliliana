@@ -26,7 +26,7 @@ export const router = (app: Application) => {
       content: "description",
     };
     const seo = (await getSeo("home")) || seoholder;
-    // console.log("==============seo", seo)
+    // console.log("==============seo", seo);
     res.render("index", { galley_preview, blogs, seo, page: "/" });
   });
 
@@ -51,6 +51,9 @@ export const router = (app: Application) => {
   app.get("/admissions", async (req, res) => {
     res.render("pages/admissions", {});
   });
+  app.get("/newsletters", async (req, res) => {
+    res.render("pages/newsletters", { page: "/newsletters" });
+  });
 
   app.get("/thank-you", async (req, res) => {
     res.render("pages/thankYou", {});
@@ -68,6 +71,8 @@ export const router = (app: Application) => {
     };
     const seo = (await getSeo("blog")) || seoholder;
     const blogs = await getBlogs(req, res);
+
+    // console.log("==============blogs", blogs);
     res.render("pages/blog", { seo, blogs, page: "/blog" });
   });
   app.get("/blog-details/:url", async (req, res) => {

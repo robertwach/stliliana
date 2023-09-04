@@ -20,10 +20,11 @@ const port = process.env.PORT ?? "3001";
 
 router(app);
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://127.0.0.1:27017/lilyanna", {
+mongoose.connect("mongodb://127.0.0.1:27017/lilyann", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
 app.use(async function (req, res, next) {
   // res.locals.imageUrl = "http://localhost:5400";
   // res.locals.imageUrl = "https://example.co.ke";
