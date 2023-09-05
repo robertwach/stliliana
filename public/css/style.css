@@ -69,11 +69,24 @@ font-family: 'Grand Hotel', cursive;*/
 
 /*** 
 
+
+
 ====================================================================
 	Global Settings
 ====================================================================
 
  ***/
+
+ .logo-text-wrap {
+	display: flex;
+	flex-direction: row;
+ }
+
+ @media screen and (max-width: 768px) {
+	.logo-text-wrap {
+		flex-direction: column;
+	 }
+ }
 
 body {
 	font-size:15px;

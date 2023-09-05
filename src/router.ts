@@ -48,6 +48,10 @@ export const router = (app: Application) => {
     res.render("pages/ourLocation", {});
   });
 
+  app.get("/faqs", async (req, res) => {
+    res.render("pages/faqs", {});
+  });
+
   app.get("/admissions", async (req, res) => {
     res.render("pages/admissions", {});
   });
