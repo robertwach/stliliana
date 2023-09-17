@@ -1,59 +1,58 @@
-import { Request, Response } from 'express';
+import { Request, Response } from "express";
 
 // import { v4 as uuidv4 } from 'uuid';
 
 //  import { Schema } from 'mongoose';
-import Model from './blog.model';
-import { blog } from '../../interfaces/article';
+import Model from "./blog.model";
+import { blog } from "../../interfaces/article";
 // import {  makeUrl  } from '../../helpers/index';
 
-
 export async function countPosts() {
-    return Model.count();
+  return Model.count();
 }
 export async function getBlog(req: Request, res: Response) {
-    try {
-        const name = req.params.url;
-      const article = await Model.findOne({ url: name });
-      const b = article as blog
-      return b;
-    } catch (err) {
-      return {} as blog;
-    }
+  try {
+    const name = req.params.url;
+    const article = await Model.findOne({ url: name });
+    const b = article as blog;
+    return b;
+  } catch (err) {
+    return {} as blog;
   }
-  export async function getBlogs(req: Request, res: Response) {
-    try {
-      const blogs = await Model.find({});
-      return blogs;
-    } catch (err) {
-      return {msg : "something went wrong", state: false};
-    }
+}
+export async function getBlogs(req: Request, res: Response) {
+  try {
+    const blogs = await Model.find({});
+    return blogs;
+  } catch (err) {
+    return { msg: "something went wrong", state: false };
   }
-  export async function getHomeBlogs(req: Request, res: Response) {
-    try {
-      const blogs = await Model.find({}).limit(3).exec();
-      return blogs;
-    } catch (err) {
-      return {msg : "something went wrong", state: false};
-    }
+}
+export async function getHomeBlogs(req: Request, res: Response) {
+  try {
+    const blogs = await Model.find({}).limit(3).exec();
+    return blogs;
+  } catch (err) {
+    return { msg: "something went wrong", state: false };
   }
-export async function articleDetails (req: Request, res: Response) {
-    try {
-        const id = req.params.id;
-        const article = await Model.findById(id);
-        res.send({ state: true, article });
-    } catch (err: any) {
-        res.send({ state: false, msg: err.message });
-    }
+}
+export async function articleDetails(req: Request, res: Response) {
+  try {
+    const url = req.params.url;
+    const article = await Model.find({ url: url });
+    res.send({ state: true, article });
+  } catch (err: any) {
+    res.send({ state: false, msg: err.message });
+  }
 }
 
-export async function allArticles (req: Request, res: Response) {
-    try {
-        const articles = await Model.find({});
-        res.send({ state: true, articles });
-    } catch (err: any) {
-        res.send({ state: false, msg: err.message });
-    }
+export async function allArticles(req: Request, res: Response) {
+  try {
+    const articles = await Model.find({});
+    res.send({ state: true, articles });
+  } catch (err: any) {
+    res.send({ state: false, msg: err.message });
+  }
 }
 // export async function createArticle (req: Request, res: Response) {
 //     try {
@@ -164,7 +163,6 @@ export async function allArticles (req: Request, res: Response) {
 //             throw(new Error('Post not found'));
 //         }
 
-
 //         const fileNames: any = {};
 //         const sections = articleData?.sections || [];
 //         articleData.sections = sections.map((section: any) => {
@@ -218,4 +216,3 @@ export async function allArticles (req: Request, res: Response) {
 //         res.send({ state: false, msg: err.message });
 //     }
 // }
-

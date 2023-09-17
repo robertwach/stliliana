@@ -4,24 +4,61 @@ const ObjectId = Schema.Types.ObjectId;
 
 const BlogSchema: Schema = new Schema(
   {
-    code: { type: String },
-    title: { type: String },
-    caption: { type: String },
-    url: { type: String },
-    meta: { type: String },
-    featured: { type: Boolean, default: false },
-    exclusive: { type: Boolean, default: false },
-    sport: { type: String },
-    timeago: { type: String },
-    picture: { type: String },
-    trending: { type: Boolean, default: false },
-    content: { type: String },
-    credit: { type: String },
-    author: { type: String },
-    category: { type: String },
+    products: [
+      {
+        productId: { type: ObjectId, ref: "Product" },
+      },
+    ],
+    introduction: { type: String },
+    conclusion: { type: String },
+    preview: { type: String },
+    heading: { type: String },
+    metaTitle: { type: String, required: true },
+    url: { type: String, required: true, unique: true },
+    metaDescription: { type: String },
+    image: { type: String },
+    thumbImage: { type: String },
+    published: { type: Boolean, default: false },
+    author: {
+      name: { type: String },
+      image: { type: String },
+      description: { type: String },
+      userId: { type: ObjectId, ref: "User" },
+    },
+    tags: [{ title: String, link: String }],
+    categories: [
+      {
+        type: ObjectId,
+        ref: "Category",
+      },
+    ],
+    subcategories: [
+      {
+        type: ObjectId,
+        ref: "Subcategory",
+      },
+    ],
+    related: [{ id: { type: ObjectId, ref: "Blog" } }],
+    sections: [
+      {
+        content: { type: String },
+        image: { type: String },
+        heading: { type: String },
+        list: [{ title: { type: String }, description: { type: String } }],
+      },
+    ],
+    ads: [
+      {
+        text: { type: String },
+        link: { type: String },
+        image: { type: String },
+      },
+    ],
+    linkedProducts: [{ type: ObjectId, ref: "Product" }],
+    linkedPosts: [{ type: ObjectId, ref: "Blog" }],
     // comments: comment[]
   },
-  { timestamps: true, collection: "news" }
+  { timestamps: true }
 );
 
 export default mongoose.model<blog>("Blog", BlogSchema);

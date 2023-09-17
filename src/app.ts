@@ -16,11 +16,14 @@ app.use(express.static("public"));
 // set the view engine to ejs
 app.set("view engine", "ejs");
 
-const port = process.env.PORT ?? "3001";
+const port = process.env.PORT ?? "8080";
 
 router(app);
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://127.0.0.1:27017/lilyann", {
+
+const dbUrl = process.env.DATABASE_URL ?? "mongodb://localhost:27017/stlilyann";
+
+mongoose.connect(dbUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

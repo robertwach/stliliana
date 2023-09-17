@@ -1,15 +1,19 @@
-import mongoose, { Schema } from 'mongoose';
+import mongoose, { Schema } from "mongoose";
 //  const ObjectId = Schema.Types.ObjectId;
 
-import { IPageData } from './../../interfaces/article';
+import { IPageData } from "./../../interfaces/article";
 
-const PageDataSchema: Schema = new Schema({
-  page: { type: String },
-  title: { type: String },
-  meta: { type: String },
-  header_1: { type: String },
-  name: { type: String },
-  content: { type: String },
-},  { timestamps: true, collection: 'page' });
+const PageDataSchema: Schema = new Schema(
+  {
+    name: { type: String, required: true },
+    url: { type: String, required: true, unique: true },
+    h1: { type: String },
+    metaTitle: { type: String },
+    metaDescription: { type: String },
+    description: { type: String },
+    image: { type: String },
+  },
+  { timestamps: true }
+);
 
-export default mongoose.model<IPageData>('page', PageDataSchema);
+export default mongoose.model<IPageData>("PageData", PageDataSchema);

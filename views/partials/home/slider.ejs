@@ -1,6 +1,6 @@
 <!--Main Slider-->
 
-<section class="main-slider" data-start-height="800" data-slide-overlay="yes">
+<section class="main-slider" data-start-height="760" data-slide-overlay="yes">
     	
     <div class="tp-banner-container">
         <div class="tp-banner">
@@ -8,8 +8,8 @@
 
                 <% bannerImages.forEach(function(bannerImage) { %>
                 
-                <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="/images/slider/IMG-20230829-WA0068.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">
-                <img src="<%- bannerImage.image %>"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"> 
+                <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="/images/slider/IMG-20230829-WA0068.jpg"  data-saveperformance="off"  data-title="St Lilyanna school">
+                <img src="<%- bannerImage.image %>"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"> 
                 
                 <div class="overlay-slide"></div>
                 
@@ -77,19 +77,26 @@
                     <%- bannerImage.description %>
                 </div>
             </div>
+
+
+                <% if(bannerImage?.url) { %>
                 
                 <div class="tp-caption sfb sfb tp-resizeme"
-                data-x="center" data-hoffset="0"
-                data-y="center" data-voffset="175"
-                data-speed="1500"
-                data-start="2000"
-                data-easing="easeOutExpo"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.01"
-                data-endelementdelay="0.3"
-                data-endspeed="1200"
-                data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one">Let’s Go</a></div>
+                    data-x="center" data-hoffset="0"
+                    data-y="center" data-voffset="175"
+                    data-speed="1500"
+                    data-start="2000"
+                    data-easing="easeOutExpo"
+                    data-splitin="none"
+                    data-splitout="none"
+                    data-elementdelay="0.01"
+                    data-endelementdelay="0.3"
+                    data-endspeed="1200"
+                    data-endeasing="Power4.easeIn">
+                    <a href="#" class="theme-btn btn-style-one">Let’s Go</a>
+                </div>
+
+                <% } %>
                 
                 </li>
 

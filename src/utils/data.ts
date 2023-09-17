@@ -1,22 +1,41 @@
 const bannerImages = [
   {
+    image: "/banner/students-lineup-8.jpg",
+    title: "Shaping Bright Futures",
+    subtitle: "welcome to St Lilyanna",
+    description: " Centre of Excellence in Teaching, Learning and Research",
+    url: "/about",
+  },
+  {
+    image: "/banner/learning-4.jpg",
+    title: "Promoting Academic Excellence",
+    subtitle: "Interactive lessons",
+    description: "Your child is getting the best care and education",
+  },
+  {
     image: "/banner/graduation-close-shot.jpg",
-    title: "Your Childrens Are Safe With us",
+    title: "Giving your child a solid start",
     subtitle: "welcome to St Lilyanna",
     description: " Centre of Excellence in Teaching, Learning and Research",
   },
   {
-    image: "/banner/extracurricular.jpg",
-    title: "We create fun for our kids",
-    subtitle: "Playing is important to a childs growth",
-    description: "Play builds creative side of the child",
+    image: "/banner/team.jpg",
+    title: "We offer a wide range of activities",
+    subtitle: "Fostering all round growth",
+    description: "Sports and games are part of our curriculum",
   },
   {
-    image: "/banner/learning.jpg",
-    title: "Nurturing academic excellence",
-    subtitle: "Giving your child a solid start",
-    description: "We help lay a firm foundation for your child",
+    image: "/banner/extracurricular.jpg",
+    title: "Nurturing Fun and Creativity",
+    subtitle: "A Unique Playful Path to Success",
+    description: "Your Kid is happy. We make sure of that",
   },
+  // {
+  //   image: "/banner/learning.jpg",
+  //   title: "Nurturing academic excellence",
+  //   subtitle: "Giving your child a solid start",
+  //   description: "We help lay a firm foundation for your child",
+  // },
   {
     image: "/banner/scout.jpg",
     title: "Humility is cultivated",
@@ -51,9 +70,32 @@ export const business = {
   },
   bannerImages,
   page: "",
+  months: [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "June",
+    "July",
+    "Aug",
+    "Sept",
+    "Oct",
+    "Nov",
+    "Dec",
+  ],
+  IMAGE_URL:
+    process.env.IMAGE_URL || "https://storage.googleapis.com/stlilyanna",
 };
 
 export const all = [
+  { id: 1, img: "bus.jpg", title: "School bus" },
+  { id: 1, img: "stlilyanna_gate.jpeg", title: "St Lilyanna" },
+  { id: 1, img: "learning-7.jpg", title: "Students learning" },
+  { id: 1, img: "team-2.jpg", title: "St Lilyanna team" },
+  { id: 1, img: "team-4.jpg", title: "Sports" },
+  { id: 1, img: "learning-9.jpg", title: "Computer lab" },
+
   { id: 1, img: "IMG-20230829-WA0110.jpg" },
   { id: 2, img: "IMG-20230829-WA0021.jpg" },
   { id: 3, img: "IMG-20230829-WA0047.jpg" },
