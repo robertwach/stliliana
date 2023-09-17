@@ -40,22 +40,26 @@
                                 <!--Image Column-->
                                 <div class="image-column col-md-6 col-sm-6 col-xs-12">
                                     <div class="image">
-                                        <div class="date-box">4<span>Apr</span></div>
-                                        <a href="/blog-details/<%= blog.url %>">
-                                            <img src="<%= imageUrl %><%= blog.picture %>"
+
+
+                                        
+                                        <div class="date-box">    <%= new Date(blog?.createdAt).getDate() %>
+                                             <span><%= months[new Date(blog.createdAt).getMonth()] %></span></div>
+                                        <a href="/post/<%= blog.url %>">
+                                            <img src="<%= IMAGE_URL %>/blog/<%= blog.image %>"
                                         </a>
                                     </div>
                                 </div>
                                 <!--Content Column-->
                                 <div class="content-column col-md-6 col-sm-6 col-xs-12">
                                     <div class="content-inner">
-                                        <h3><a href="/blog-details/<%= blog.url %>"><%=blog.title %></a></h3>
+                                        <h3><a href="/post/<%= blog.url %>"><%=blog.heading %></a></h3>
                                         <ul class="post-meta">
-                                            <li><a href="#"><span class="icon fa fa-user"></span><%=blog.author %></a></li>
-                                            <li><a href="#"><span class="icon fa fa-commenting-o"></span> 7 Comments</a></li>
+                                            <li><a href="#"><span class="icon fa fa-user"></span> Admin </a></li>
+                                            <!-- <li><a href="#"><span class="icon fa fa-commenting-o"></span> 7 Comments</a></li> -->
                                         </ul>
                                     </div>
-                                    <div class="text"><%=blog.caption %></div>
+                                    <div class="text"><%=blog.preview %></div>
                                 </div>
                             </div>
                         </div>
