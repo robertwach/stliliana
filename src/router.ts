@@ -4,6 +4,10 @@ import { getBlog, getBlogs, getHomeBlogs } from "./cmd/blog/blog.controller";
 import { getSeo } from "./cmd/seo/seo.controller";
 import { Schema } from "mongoose";
 import { blog } from "./interfaces/article";
+
+import * as galleryController from "./cmd/gallery/gallery.controller";
+import SendMail from "./helpers/sendMail";
+
 const ObjectId = Schema.Types.ObjectId;
 export const router = (app: Application) => {
   //   router(app);
@@ -15,9 +19,16 @@ export const router = (app: Application) => {
   app.get("/", async (req, res) => {
     const galley_preview = all.slice(0, 6);
     const blogs = await getHomeBlogs(req, res);
+    const galleryImages = await galleryController.photos({ featured: true });
 
     const seo = (await getSeo("/")) ?? business.seo;
-    res.render("index", { galley_preview, blogs, seo, page: "/" });
+    res.render("index", {
+      galley_preview,
+      galleryImages,
+      blogs,
+      seo,
+      page: "/",
+    });
   });
 
   app.get("/about", async (req, res) => {
@@ -46,6 +57,7 @@ export const router = (app: Application) => {
 
   app.get("/thank-you", async (req, res) => {
     const seo = (await getSeo("/thank-you")) ?? business.seo;
+
     res.render("pages/thankYou", { seo });
   });
 
@@ -57,13 +69,16 @@ export const router = (app: Application) => {
     res.render("pages/blog", { seo, blogs, page: "/blog" });
   });
   app.get("/post/:url", async (req, res) => {
-    const blog: any = (await getBlog(req, res)) || null;
+    const { post, count }: any = (await getBlog(req, res)) || {
+      post: null,
+      count: 0,
+    };
     // console.log("=============blog", blog)
-    let title = "st lilyann school";
-    let meta = "st lilyann school";
-    if (blog !== null) {
-      title = blog?.metaTitle;
-      meta = blog?.metaDescription;
+    let title = "st Lilyanna school";
+    let meta = "st Lilyanna school";
+    if (post !== null) {
+      title = post?.metaTitle;
+      meta = post?.metaDescription;
     }
 
     const seo = {
@@ -75,9 +90,8 @@ export const router = (app: Application) => {
       metaTitle: title,
       metaDescription: meta,
     };
-    // const seo = seoholder;
     const blogs = (await getBlogs(req, res)) ?? business.seo;
-    res.render("pages/blog-details", { blog, blogs, seo });
+    res.render("pages/blog-details", { blog: post, blogs, seo, count });
   });
 
   // app.get("/post/1", (req, res) => {
@@ -89,10 +103,19 @@ export const router = (app: Application) => {
     res.render("pages/contactUs", { seo, page: "/contact-us" });
   });
 
+  app.post("/contact-us", async (req, res) => {
+    // console.log(req.body, "body");
+    const { name, email, subject, message } = req.body;
+    SendMail(message, email, name, subject);
+    res.redirect("/thank-you");
+  });
+
   app.get("/gallery", async (req, res) => {
     const seo = (await getSeo("/gallery")) ?? business.seo;
 
-    res.render("pages/gallery", { all, seo, page: "/gallery" });
+    const photos = await galleryController.photos();
+
+    res.render("pages/gallery", { all, photos, seo, page: "/gallery" });
   });
 
   //   app.get("*", (req, res) => {

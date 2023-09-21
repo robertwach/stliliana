@@ -4,6 +4,7 @@ import { business } from "./utils/data";
 // var path = require("path");
 
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 
 require("dotenv").config();
 
@@ -18,7 +19,6 @@ app.set("view engine", "ejs");
 
 const port = process.env.PORT ?? "8080";
 
-router(app);
 mongoose.Promise = global.Promise;
 
 const dbUrl = process.env.DATABASE_URL ?? "mongodb://localhost:27017/stlilyann";
@@ -28,6 +28,12 @@ mongoose.connect(dbUrl, {
   useUnifiedTopology: true,
 });
 
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
+router(app);
 app.use(async function (req, res, next) {
   // res.locals.imageUrl = "http://localhost:5400";
   // res.locals.imageUrl = "https://example.co.ke";

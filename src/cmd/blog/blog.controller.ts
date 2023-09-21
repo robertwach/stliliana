@@ -13,11 +13,15 @@ export async function countPosts() {
 export async function getBlog(req: Request, res: Response) {
   try {
     const name = req.params.url;
-    const article = await Model.findOne({ url: name });
+    // let count = 0;
+    const [article, count] = await Promise.all([
+      Model.findOne({ url: name }),
+      Model.count({}),
+    ]);
     const b = article as blog;
-    return b;
+    return { post: b, count };
   } catch (err) {
-    return {} as blog;
+    return { post: null, count: 0 };
   }
 }
 export async function getBlogs(req: Request, res: Response) {

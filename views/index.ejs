@@ -224,14 +224,28 @@
 			
             <div class="row clearfix">
             
-                <% galley_preview.forEach(function(photo){ %>
-                    <div class="gallery-item col-md-4 col-sm-6 col-xs-12">
+                <% galleryImages.forEach(function(photo){ %>
+                    <!-- <div class="gallery-item col-md-4 col-sm-6 col-xs-12">
                         <div class="inner-box">
                             <div class="image-box"><img src="/images/gallery/<%=photo.img %> " alt="">
                                 <div class="overlay-box">
                                     <div class="content">
                                         <a class="lightbox-image" href="/images/gallery/<%=photo.img %>" title="<%= photo?.title ?? 'Photo' %>" data-fancybox-group="example-gallery">
                                             <span class="icon flaticon-plus"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="gallery-item col-md-4 col-sm-6 col-xs-12">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <img src="<%= IMAGE_URL %>/gallery/<%=photo.image %>" alt="">
+                                <div class="overlay-box">
+                                    <div class="content">
+                                        <a class="lightbox-image" href="<%= IMAGE_URL %>/gallery/<%=photo.image %>" title="<%= photo.title %>" data-fancybox-group="example-gallery">
+                                            <span class="icon flaticon-plus"></span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

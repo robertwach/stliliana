@@ -401,7 +401,7 @@
 	if($('#contact-form').length){
 		$('#contact-form').validate({
 			rules: {
-				username: {
+				name: {
 					required: true
 				},
 				email: {
